@@ -48,6 +48,8 @@ config_ssh()
 {
     echo "[*] Explicitly denying root ssh access"
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
+    echo "[!] Explicitly denying ssh password authentication"
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
     echo "[*] Generating new SSH host keys"
     mkdir /etc/ssh/temp
     mv /etc/ssh/ssh_host_* /etc/ssh/temp
