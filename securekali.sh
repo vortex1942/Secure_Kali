@@ -38,8 +38,9 @@ config_utils()
     curl $repo/portsentry.conf -s -o '/etc/portsentry/portsentry.conf'
     echo "[*] Create PortSentry history file"
     touch '/var/lib/portsentry/portsentry.history'
-    echo "[*] Seting Fail2ban to run on start up"
+    echo "[*] Setting rsyslog to run on start up"
     systemctl enable rsyslog
+    echo "[*] Setting Fail2ban to run on start up"
     systemctl enable fail2ban
 }
 
