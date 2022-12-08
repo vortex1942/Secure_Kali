@@ -23,8 +23,8 @@ upgrade_kali()
 
 install_utils()
 {
-    echo "[*] Installing Fail2ban and PortSentry"
-    apt install fail2ban portsentry
+    echo "[*] Installing Fail2ban, PortSentry, and rsyslog"
+    apt install fail2ban portsentry rsyslog
 }
 
 config_utils()
@@ -39,6 +39,7 @@ config_utils()
     echo "[*] Create PortSentry history file"
     touch '/var/lib/portsentry/portsentry.history'
     echo "[*] Seting Fail2ban to run on start up"
+    systemctl enable rsyslog
     systemctl enable fail2ban
 }
 
