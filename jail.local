@@ -5,7 +5,7 @@ port = http,https
 filter = apache-auth 
 logpath = /var/log/apache2/*error.log 
 maxretry = 3 
-bantime = -1 
+bantime = 600 
 ignoreip = 127.0.0.1
  
 # Block attempts to request suspcious URLs
@@ -15,7 +15,7 @@ port = http,https
 filter = apache-overflows 
 logpath = /var/log/apache2/*error.log 
 maxretry = 3 
-bantime = -1
+bantime = 600 
 ignoreip = 127.0.0.1
  
 # Block attempts to search for scripts that don't exist
@@ -25,7 +25,7 @@ port = http,https
 filter = apache-noscript 
 logpath = /var/log/apache2/*error.log 
 maxretry = 3 
-bantime = -1
+bantime = 600 
 ignoreip = 127.0.0.1
  
 # Block DOS attempts via a high number of GET requests
@@ -36,7 +36,7 @@ filter = http-get-dos
 logpath = /var/log/apache*/access.log 
 maxretry = 400 
 findtime = 400 
-bantime = -1
+bantime = 200 
 ignoreip = 192.168.15.189 
 action = iptables[name=HTTP, port=http, protocol=tcp]
 
@@ -47,7 +47,7 @@ port = ssh
 filter = sshd 
 logpath = /var/log/auth.log 
 maxretry = 3 
-bantime = -1
+bantime = 600 
 ignoreip = 127.0.0.1
 
 # Block port scans detected by portsentry
