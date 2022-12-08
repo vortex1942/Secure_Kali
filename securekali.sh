@@ -29,7 +29,7 @@ install_utils()
 
 config_utils()
 {
-    repo="https://raw.githubusercontent.com/gh0x0st/Secure_Kali/master"
+    repo="https://raw.githubusercontent.com/vortex1942/Secure_Kali/master"
     echo "[*] Downloading jail.conf from repo"
     curl $repo/jail.local -s  -o '/etc/fail2ban/jail.local'
     echo "[*] Downloading http-get-dos.conf from repo"
